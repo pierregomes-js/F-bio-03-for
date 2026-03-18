@@ -1,3 +1,5 @@
+#incompleto
+
 def main():
     print('__Progressão Aritmética__')
 
@@ -5,7 +7,7 @@ def main():
     limite = int(input('Limite: '))
     r = int(input('Razão: '))
 
-    for i in range(valor_inicial, limite, r):
+    for i in range(valor_inicial, limite, **r):
         print(i)
 
 

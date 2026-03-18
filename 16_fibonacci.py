@@ -3,16 +3,21 @@ def main():
 
     n = int(input('N primeiros termos da sequência: '))
 
-    for i in range(n):
-        fibonnaci(n, i)
+    print(fibonnaci(n))
 
-def fibonnaci(n, i):
+def fibonnaci(n):
     sequencia = []
 
     for i in range(n):
         if i == 1 or i == 0:
-            continue
+            sequencia.append(i)
         else:
+            elemento = ((i - 1) + (i - 2))
+            sequencia.append(elemento)
+
+    return sequencia
+
+
 
 
 

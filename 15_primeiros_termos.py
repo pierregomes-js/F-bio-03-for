@@ -1,3 +1,4 @@
+#incompleto
 def main():
     n = int(input('Digite um valor n: '))
 

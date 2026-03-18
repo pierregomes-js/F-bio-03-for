@@ -1,33 +1,48 @@
+
 def main():
     print('__Eleição Presidencial__')
 
     n = int(input('Digite a quantidade de eleitores: '))
 
-    urna_eletronica = urna(n)
-    total_candidato_1 = votos_1(urna_eletronica)
-
-
-    def urna(n):
-        votos = []
-        for i in range(1, n+1):
-            voto = input(f'Voto {i}: ')
-            votos.append(voto)
-        return votos
+    def ganhador(a, b, c):
+            return a > b and a > c
     
-    def votos_1(urna_eletronica):
-        candidato_1 = []
-        for i in range(urna_eletronica):
-            if urna_eletronica[i] == 1:
-                candidato_1 += 1
-            else:
-                continue
+    candidato_1 = []
+    candidato_2 = []
+    candidato_3 = []
+    nulo = []
+    branco = []
 
-        return len(candidato_1)
+    for i in range(1, n+1):
+        voto = int(input(f'Voto {i}: '))
             
-    urna(n)
-    print(urna_eletronica)
-    print(total_candidato_1)
-    
+        if voto == 1:
+            candidato_1.append(voto)
+        elif voto == 2:
+            candidato_2.append(voto)
+        elif voto == 3:
+            candidato_3.append(voto)
+        elif voto == 0:
+            branco.append(voto)
+        else:
+            nulo.append(voto)
+
+        
+    print(f'Total de votos para candidato 1: {len(candidato_1)}')
+    print(f'Total de votos para candidato 2: {len(candidato_2)}')
+    print(f'Total de votos para candidato 3: {len(candidato_3)}')
+    print(f'Total de votos em nulo: {len(nulo)}')
+    print(f'Total de votos para branco: {len(branco)}')
+
+    if ganhador(candidato_1, candidato_2, candidato_3):
+        print('O ganhador é o candidato 1.')
+    elif ganhador(candidato_2, candidato_1, candidato_3):
+        print('O ganhador é o candidato 1.')
+    else:
+        print('O ganhador é o candidato 3.')
+
+
+        
         
 
 

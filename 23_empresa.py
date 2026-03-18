@@ -1,6 +1,7 @@
+#incompleto
 
 def main():
-    print('__Pesquisa Municipal__')
+    print('__Empresa__')
 
     n = int(input('Número de habitantes da cidade: '))
 

@@ -12,7 +12,7 @@ def main():
             print(resultado)
 
 def maior_que_limite(valor, limite):
-    return 'valor > limite'
+    return valor > limite
 
 
 

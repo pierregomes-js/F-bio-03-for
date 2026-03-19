@@ -1,4 +1,4 @@
-#incompleto
+
 def main():
     n = int(input('Digite a quantidade de elementos da lista: '))
 
@@ -12,21 +12,17 @@ def main():
 
         lista.append(elemento)
 
+    def maior(lista):
+        maior = lista[0]
 
-    def maior(lista, n):
-        maior = 0
-
-        for i in range(n):
-            if maior > lista[i]:
-                maior == lista[i]
-                continue
-            else:
-                continue
+        for i in lista:
+            if i > maior:
+                maior = i
 
         return maior
     
 
-    print(f'Maior elemento da lista: {maior(lista, n)}.')
+    print(f'Maior elemento da lista: {maior(lista)}.')
     
     
     

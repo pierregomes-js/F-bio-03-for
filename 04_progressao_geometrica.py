@@ -1,4 +1,3 @@
-#incompleto
 
 def main():
     print('__Progressão Aritmética__')
@@ -7,8 +6,16 @@ def main():
     limite = int(input('Limite: '))
     r = int(input('Razão: '))
 
-    for i in range(valor_inicial, limite, **r):
-        print(i)
+    valor = valor_inicial
+    #printar valor inicial
+    print(valor)
+
+    for i in range(limite):
+        valor *= r
+        if valor < limite:
+            print(valor)
+            
+
 
 
 

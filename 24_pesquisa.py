@@ -1,6 +1,6 @@
 
 def main():
-    print('__Pesquisa Municipal__')
+    print('__Empresa__')
 
     n = int(input('Número de habitantes da cidade: '))
 
@@ -9,20 +9,18 @@ def main():
     contador_salarios = 0
 
     for i in range(n):
-        salario = float(input(f'{i} Salário: '))
-        filhos = int(input(f'{i} Número de filhos: '))
+        salario = float(input(f'Salário do habitante {i}: '))
+        filhos = int(input(f'Número de filhos do habitante {i}: '))
 
         soma_salarios += salario
         soma_filhos += filhos
 
-        contador = 0
-
         if salario <= 1000:
-            contador += 1
+            contador_salarios += 1
 
     media_salario = soma_salarios / n
     media_filhos = soma_filhos / n
-    percentual = (contador / n) * 100
+    percentual = (contador_salarios / n) * 100
 
     print('Resultado: ')
     print(f'Média dos salários: {media_salario:.2f}')

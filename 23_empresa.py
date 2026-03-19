@@ -1,37 +1,47 @@
-#incompleto
 
 def main():
     print('__Empresa__')
 
-    n = int(input('Número de habitantes da cidade: '))
+    n = int(input('Insira o número de funcionários da empresa: '))
 
-    soma_salarios = 0
-    soma_filhos = 0
-    contador_salarios = 0
+    lista_salario = []
+    lista_inss = []
+    lista_ir = []
 
     for i in range(n):
-        salario = float(input(f'{i} Salário: '))
-        filhos = int(input(f'{i} Número de filhos: '))
+        salario = float(input(f'Horas trabalhadas do funcionário {i}: '))
+        salario *= 12
+        dependentes = int(input(f'Numero de dependentes do funcionário {i}: '))
+        salario += (dependentes * 40)
+        desconto_inss = salario * 0.085
+        desconto_ir = salario * 0.05
+        salario = salario - (desconto_inss + desconto_ir)
+        lista_salario.append(salario)
+        lista_ir.append(desconto_ir)
+        lista_inss.append(desconto_inss)
 
-        soma_salarios += salario
-        soma_filhos += filhos
+    print('Ficha')
 
-        contador = 0
+    print('Listas dos salários líquidos de cada funcionário:')
+    numeracao = 0
+    for i in lista_salario:
+        print(f'Número do funcionário : {numeracao}, salário: {i:.2f}.')
+        numeracao += 1
 
-        if salario <= 1000:
-            contador += 1
+    print('')
+    print('Listas do imposto do INSS no salário de cada funcionário:')
+    numeracao = 0
+    for i in lista_inss:
+        print(f'Número do funcionário : {numeracao}, desconto: {i:.2f}')
+        numeracao += 1
+        
+    print('')
+    print('Listas do imposto do IR no salário de cada funcionário:')
+    numeracao = 0
+    for i in lista_ir:
+        print(f'Número do funcionário : {numeracao}, desconto: {i:.2f}')
+        numeracao += 1
 
-    media_salario = soma_salarios / n
-    media_filhos = soma_filhos / n
-    percentual = (contador / n) * 100
 
-    print('Resultado: ')
-    print(f'Média dos salários: {media_salario:.2f}')
-    print(f'Média de filhos por cidadão: {media_filhos:.1f}')
-    print(f'Percentual da população que ganha até 1000: {percentual:.2f}')
-
-    
-
- 
 
 main()

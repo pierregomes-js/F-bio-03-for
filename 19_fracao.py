@@ -1,22 +1,30 @@
+#incompleto
 def main():
-    n = int(input("N: "))
-    
-    def calculo(n):
-        lista = []
-        for i in range(1, n+1):
-            for j in range(n+1, 1, -1):
-                elemento = i/j
-                lista.append(elemento)
+    n = int(input('N: '))
 
-            
-        somatorio = 0
-        for i in lista:
-            if i % 2 == 0:
-                somatorio -= i
-            else:
-                somatorio = i
-            
-        return somatorio
-    print(calculo(n))
-    
+    somatorio_par = 0
+    somatorio_impar = 0
+
+
+    for x in range(n, 1, -2):
+        numerador_par = x
+
+    for y in range(1, n+1, 2):
+        denominador_par = y
+
+    for m in range(1, n+1, 2):
+        numerador_impar = m
+
+    for n in range(n, 1, -2):
+        denominador_impar = n
+
+    for k in range(1, n+1):
+        
+        somatorio += numerador / denominador
+
+
+
+    print(f'S = {somatorio:.2f}')
+
+
 main()

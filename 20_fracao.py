@@ -1,20 +1,14 @@
 def main():
-    n = int(input("N: "))
-    
-    def calculo(n):
-        
-            
-        somatorio = 0
+  n = int(input('N: '))
 
-        
-        for i in range(1, n+1):
-            elemento = 1/i
-            if i % 2 == 0:
-                somatorio -= elemento
-            else:
-                somatorio += elemento
-            
-        return somatorio
-    print(calculo(n))
-    
+  somatorio = 0
+  for i in range(1, n+1):
+    if i % 2 == 0:
+        somatorio -= 1/i
+    else:
+       somatorio += 1/i
+
+  print(f'S = {somatorio:.2f}')
+
+
 main()

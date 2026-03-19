@@ -21,7 +21,22 @@ def main():
             print(f'Tabuada do número {valor}: ')
         
             for j in range(0, 11):
-                print(f'{valor} * {j} = {valor * j}')
+                print(f'{fdvalor} * {j} = {valor * j}')
+    elif operacao == 1:
+        for i in range(1, 11):
+            print(' ')
+            print(f'Tabuada do número {valor}: ')
+        
+            for j in range(0, 11):
+                print(f'{valor} + {j} = {valor + j}')
+    elif operacao == 2:
+        for i in range(1, 11):
+            print(' ')
+            print(f'Tabuada do número {valor}: ')
+        
+            for j in range(0, 11):
+                if j < valor:
+                    print(f'{valor} - {j} = {valor - j}')
 
             
 

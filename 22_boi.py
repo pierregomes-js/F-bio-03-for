@@ -1,53 +1,27 @@
 
 def main():
     n = int(input('Número de bois: '))
-
-
-    lista = []
+    n_gordo = 0
+    mais_gordo = 0
 
     for i in range(n):
         kg = int(input(f'Peso em kg do boi {i}: '))
-        lista.append(kg)
+        codigo = int(input(f'Código do boi {i}: '))
+        if i == 0:
+            mais_magro = kg
+            n_magro = codigo
 
-    def mais_pesado(lista):
-        mais_pesado = lista[0]
+        if kg > mais_gordo:
+            mais_gordo = kg
+            n_gordo = codigo
 
-        for i in lista:
-            if i > mais_pesado:
-                mais_pesado = i
-
-        return mais_pesado
-    
-    mais_gordo = mais_pesado(lista)
-    
-    def mais_leve(lista):
-        mais_leve = lista[0]
-
-        for i in lista:
-            if i < mais_leve:
-                mais_leve = i
-
-        return mais_leve
-        
-    mais_magro = mais_leve(lista)
-        
-    def numeracao(lista, mais):
-        numeracao = 0
-        for i in lista:
-            if i == mais:
-                return numeracao
-            else:
-                numeracao += 1
-        return numeracao
-        
-    codigo_gordo = numeracao(lista, mais_gordo)
-    codigo_magro = numeracao(lista, mais_magro)
-
-    print(f'O boi mais pesado é o de número {codigo_gordo} e pesa {mais_gordo}kg.')
-    print(f'O boi mais leve é o de número {codigo_magro} e pesa {mais_magro}kg.')
+        if kg < mais_magro:
+            mais_magro = kg
+            n_magro = codigo
 
 
-
+    print(f'O boi mais pesado é o de número {n_gordo} e pesa {mais_gordo}kg.')
+    print(f'O boi mais leve é o de número {n_magro} e pesa {mais_magro}kg.')
 
 
 main()

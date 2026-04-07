@@ -6,14 +6,14 @@ def main():
     print(fibonnaci(n))
 
 def fibonnaci(n):
-    sequencia = []
+    sequencia = ''
 
     for i in range(n):
         if i == 1 or i == 0:
-            sequencia.append(i)
+            sequencia = str(i) + sequencia
         else:
             elemento = ((i - 1) + (i - 2))
-            sequencia.append(elemento)
+            sequencia = str(elemento) + sequencia
 
     return sequencia
 

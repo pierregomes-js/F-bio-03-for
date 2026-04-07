@@ -3,26 +3,16 @@ def main():
     n = int(input('Digite a quantidade de elementos da lista: '))
 
 
-    lista = []
+    maior_num = 0
 
-
-    for i in range(1, n+1):
+    for i in range(n):
 
         elemento = float(input(f'Elemento {i}: '))
 
-        lista.append(elemento)
+        if elemento > maior_num:
+            maior_num = elemento
 
-    def maior(lista):
-        maior = lista[0]
-
-        for i in lista:
-            if i > maior:
-                maior = i
-
-        return maior
-    
-
-    print(f'Maior elemento da lista: {maior(lista)}.')
+    print(f'Maior elemento da lista: {maior_num}.')
     
     
     

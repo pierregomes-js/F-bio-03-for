@@ -4,44 +4,20 @@ def main():
 
     n = int(input('Insira o número de funcionários da empresa: '))
 
-    lista_salario = []
-    lista_inss = []
-    lista_ir = []
-
     for i in range(n):
-        salario = float(input(f'Horas trabalhadas do funcionário {i}: '))
-        salario *= 12
-        dependentes = int(input(f'Numero de dependentes do funcionário {i}: '))
+        codigo = int(input(f'Código do funcionário: '))
+        horas = float(input(f'Horas trabalhadas do funcionário {codigo}: '))
+        salario = horas * 12
+        dependentes = int(input(f'Numero de dependentes do funcionário {codigo}: '))
         salario += (dependentes * 40)
         desconto_inss = salario * 0.085
         desconto_ir = salario * 0.05
-        salario = salario - (desconto_inss + desconto_ir)
-        lista_salario.append(salario)
-        lista_ir.append(desconto_ir)
-        lista_inss.append(desconto_inss)
-
-    print('Ficha')
-
-    print('Listas dos salários líquidos de cada funcionário:')
-    numeracao = 0
-    for i in lista_salario:
-        print(f'Número do funcionário : {numeracao}, salário: {i:.2f}.')
-        numeracao += 1
-
-    print('')
-    print('Listas do imposto do INSS no salário de cada funcionário:')
-    numeracao = 0
-    for i in lista_inss:
-        print(f'Número do funcionário : {numeracao}, desconto: {i:.2f}')
-        numeracao += 1
-        
-    print('')
-    print('Listas do imposto do IR no salário de cada funcionário:')
-    numeracao = 0
-    for i in lista_ir:
-        print(f'Número do funcionário : {numeracao}, desconto: {i:.2f}')
-        numeracao += 1
-
-
+        print('')
+        print('Ficha')
+        print(f'Salário líquido do funcionário {codigo}: \n{salario:.2f}R$')
+        print(f'Salario descontado do INSS: \n{desconto_inss:.2f}R$')
+        print(f'Salario descontado do IR: \n{desconto_ir:.2f}R$')
+        print(f'Desconto total: \n{(salario - (desconto_inss + desconto_ir)):.2f}R$')
+        print('')
 
 main()

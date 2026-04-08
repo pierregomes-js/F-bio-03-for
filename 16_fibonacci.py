@@ -7,13 +7,17 @@ def main():
 
 def fibonnaci(n):
     sequencia = ''
+    a = 0
+    b = 1
 
     for i in range(n):
-        if i == 1 or i == 0:
-            sequencia = str(i) + sequencia
+        if i == 0:
+            sequencia = str(a)
         else:
-            elemento = ((i - 1) + (i - 2))
-            sequencia = str(elemento) + sequencia
+            sequencia = sequencia + ', ' + str(a)
+            proximo = a + b
+            a = b
+            b = proximo
 
     return sequencia
 
